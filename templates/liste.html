@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title%}Liste de produits{% endblock %}
+{% block content%}
+<div class="container mt-5">
+    <h1 class="py-3">Nos produits</h1>
+    <table class="table table-hover">
+       <thead>
+        <tr class="table-primary">
+            <th scope="col">Identifiant</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Prix</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            {% for produit in produits %}
+            <tr>
+                <td>{{produit.id}}</td>
+                <td>{{produit.name}}</td>
+                <td>{{produit.category}}</td>
+                <td>{{produit.price}}</td>
+            </tr>
+             {% endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
